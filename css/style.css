@@ -598,6 +598,9 @@ footer .row.icon_circle .col-lg-2 {
 .footerMobile{
   display: none;
 }
+
+
+
 /* RESPONSIVE CSS
   -------------------------------------------------- */
   @media (max-width: 1258px) {
