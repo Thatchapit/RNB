@@ -12,3 +12,15 @@
 
     
 }
+
+
+@media (max-width: 768px) {
+    .job_ex_desktop {
+        display: none;
+    }
+    .job_ex_mobile {
+        display: table;
+    }
+
+    
+}
