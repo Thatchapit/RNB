@@ -48,7 +48,7 @@
               <a class="nav-link" href="#"><span class="menuOVER">HOME</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><span class="menuOVER product_item">PRODUCT</span></a>
+              <a class="nav-link prodcut_menubar" href="#"><span class="menuOVER ">PRODUCT</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#"><span class="menuOVER">OUR STORY</span></a>
@@ -88,14 +88,14 @@
 
   </nav>
   <div class="productMenu">
-  
+
       <div class="row">
         <div class="col-4">
             <div class="media justify-content-end align-items-center">
                 <img class="d-flex mr-3 rounded-circle" src="images/micro.jpg" alt="Generic placeholder image">
                 <div class="media-body">
                   <h5 class="mt-0">Media heading</h5>
-                
+
                 </div>
               </div>
         </div>
@@ -105,18 +105,7 @@
                 <img class="d-flex mr-3 rounded-circle" src="images/micro.jpg" alt="Generic placeholder image">
                 <div class="media-body">
                   <h5 class="mt-0">Media heading</h5>
-                
-                </div>
-              </div>
-        </div>
 
-
-        <div class="col-4">
-            <div class="media justify-content-end align-items-center">
-                <img class="d-flex mr-3 rounded-circle" src="images/micro.jpg" alt="Generic placeholder image">
-                <div class="media-body">
-                  <h5 class="mt-0">Media heading</h5>
-                
                 </div>
               </div>
         </div>
@@ -127,20 +116,31 @@
                 <img class="d-flex mr-3 rounded-circle" src="images/micro.jpg" alt="Generic placeholder image">
                 <div class="media-body">
                   <h5 class="mt-0">Media heading</h5>
-                
+
                 </div>
               </div>
         </div>
 
 
-        
+        <div class="col-4">
+            <div class="media justify-content-end align-items-center">
+                <img class="d-flex mr-3 rounded-circle" src="images/micro.jpg" alt="Generic placeholder image">
+                <div class="media-body">
+                  <h5 class="mt-0">Media heading</h5>
+
+                </div>
+              </div>
+        </div>
+
+
+
       </div>
 
   </div>
   <div class="pos-f-t fixed-top" style="top:66px;">
       <div class="collapse" id="navbarToggleExternalContent">
         <div class="p-4 navbar-dark" style="background-color:#2b2523;">
-         
+
           <ul class="navbar-nav mr-auto mobileMenu ">
               <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -162,9 +162,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">CONTACT US</a>
                   </li>
-             
+
             </ul>
-          
+
         </div>
       </div>
   </div>
@@ -692,29 +692,29 @@
   <footer class="jumbotron jumbotron-fluid">
     <div class="container footerMobile">
       <div class="row justify-content-center">
-              <div class="col-12">  
+              <div class="col-12">
               <div class="circleIcon  rounded-circle "></div>
               <div class="circleIcon  rounded-circle "></div>
               <div class="circleIcon  rounded-circle "></div>
               <div class="circleIcon  rounded-circle "></div>
             </div>
-            <div class="col-12">  
+            <div class="col-12">
                 <h1>Contact</h1>
-               
+
             </div>
-            <div class="col-12 detail">  
+            <div class="col-12 detail">
                 <p> บริษัท อาร์.เอ็น.บี.โปรดักส์ แอนด์ แพ็คเกจจิ้ง จำกัด<br/>
                   111/38 หมู่ 4 ตำบลสวนหลวง อำเภอกระทุ่มแบน จังหวัดสมุทรสาคร 74110<br/><br/>
-                  
+
                   โทร : 034-473631 , 086-3073209, 081-6990031<br/>
                   064-9835931(เอก) , 064-9835983<br/><br/>
-                  
+
                   แฟกซ์ : 034-473630<br/>
                   อีเมล : rnb_product@hotmail.com, rnbproduct09@gmail.com</p>
             </div>
 
-           
-           
+
+
       </div>
     </div>
     <div class="container footerDesktop">
@@ -778,11 +778,9 @@
 
 
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script>
-    window.jQuery || document.write('<script src="dist/js/vendor/jquery.min.js"><\/script>')
-  </script>
+
+    <script src="dist/js/vendor/jquery-3.2.1.min.js"></script>
+
   <script src="dist/js/vendor/popper.min.js"></script>
   <script src="dist/js/bootstrap.min.js"></script>
   <script src="dist/js/vendor/holder.min.js"></script>
@@ -816,6 +814,7 @@
     }
 
     $(function () {
+      var menuOpen = false;
 
       var module = document.getElementById("clamp-this-module");
       $clamp(module, {
@@ -833,6 +832,21 @@
       updateCarouselSizes();
       updateSquarebox();
       updateFeedbatCarousel();
+
+      $('.prodcut_menubar').click(function(){
+        if(!menuOpen){
+          $('.prodcut_menubar span').addClass('product_item');
+          menuOpen = true;
+        }
+        else{
+            $('.prodcut_menubar span').removeClass('product_item');
+              menuOpen = false;
+        }
+
+          $( '.productMenu' ).slideToggle( "fast", function() {
+    // Animation complete.
+  });
+      });
     });
   </script>
 </body>

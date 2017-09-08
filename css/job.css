@@ -1,3 +1,20 @@
+.card.highlight{
+  background-color: #ff9900;
+  color: white;
+}
+
+.work .card a{
+  color: inherit;
+}
+
+.work .card .collapse ,.work .card .collapsing{
+  background-color: white;
+  color: black;
+}
+
+.card.highlight a{
+  color: inherit;
+}
 .job_ex_mobile {
     display: none;
 }
@@ -10,7 +27,7 @@
         display: table;
     }
 
-    
+
 }
 
 
@@ -22,5 +39,5 @@
         display: table;
     }
 
-    
+
 }

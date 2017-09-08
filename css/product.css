@@ -1,3 +1,8 @@
+.product_main .head_topic_box{
+      background-color: #ff9900;
+      color: white;
+      
+}
 .more_content .table td,
 .more_content .table th {
     padding: .25rem;
