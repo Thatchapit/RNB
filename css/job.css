@@ -18,6 +18,8 @@
 .job_ex_mobile {
     display: none;
 }
+background-color: #05c100;
+}
 
 @media (max-width: 991px) {
     .job_ex_desktop {

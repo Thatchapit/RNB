@@ -34,7 +34,9 @@
             <img src="images/mobile.png" alt="">
             <h5>064-9835964 ( คุณเอก )</h5>
           </div>
-          <div class="circleIcon  rounded-circle "></div>
+          <div class="circleIcon  rounded-circle p-2">
+              <img src="images/at.svg" alt="" class="img-fluid">
+          </div>
           <div class="circleIcon  rounded-circle "></div>
           <div class="circleIcon  rounded-circle "></div>
           <div class="circleIcon  rounded-circle "></div>
@@ -745,16 +747,24 @@
           </ul>
           <div class="row icon_circle">
             <div class="col-lg-2 col-md-2">
-              <div class="circleIcon squareBoxCircle rounded-circle "></div>
+              <div class="circleIcon squareBoxCircle rounded-circle p-2 footerIcon line">
+                <img src="images/at.svg" alt="" class="svg img-fluid">
+              </div>
             </div>
             <div class="col-lg-2  col-md-2">
-              <div class="circleIcon squareBoxCircle rounded-circle "></div>
+              <div class="circleIcon squareBoxCircle rounded-circle  p-2 footerIcon mail">
+                  <img src="images/close-envelope.svg" alt="" class="svg img-fluid">
+              </div>
             </div>
             <div class="col-lg-2  col-md-2">
-              <div class="circleIcon squareBoxCircle rounded-circle "></div>
+              <div class="circleIcon squareBoxCircle rounded-circle p-2 footerIcon facebook">
+                  <img src="images/facebook-letter-logo.svg" alt="" class="svg img-fluid">
+              </div>
             </div>
             <div class="col-lg-2  col-md-2">
-              <div class="circleIcon squareBoxCircle rounded-circle "></div>
+              <div class="circleIcon squareBoxCircle rounded-circle p-2 footerIcon map">
+                <img src="images/placeholder-on-map-paper-in-perspective.svg" alt="" class="svg img-fluid">
+              </div>
             </div>
 
           </div>
@@ -790,6 +800,35 @@
   <script src="dist/js/clamp.min.js"></script>
 
   <script>
+     jQuery('img.svg').each(function(){
+            var $img = jQuery(this);
+            var imgID = $img.attr('id');
+            var imgClass = $img.attr('class');
+            var imgURL = $img.attr('src');
+
+            jQuery.get(imgURL, function(data) {
+                // Get the SVG tag, ignore the rest
+                var $svg = jQuery(data).find('svg');
+
+                // Add replaced image's ID to the new SVG
+                if(typeof imgID !== 'undefined') {
+                    $svg = $svg.attr('id', imgID);
+                }
+                // Add replaced image's classes to the new SVG
+                if(typeof imgClass !== 'undefined') {
+                    $svg = $svg.attr('class', imgClass+' replaced-svg');
+                }
+
+                // Remove any invalid XML tags as per http://validator.w3.org
+                $svg = $svg.removeAttr('xmlns:a');
+
+                // Replace image with new SVG
+                $img.replaceWith($svg);
+
+            }, 'xml');
+
+        });
+
     function updateCarouselSizes() {
       if ($(window).width() > 974) {
         var maxheight = $('.carousel-item.active .img-fluid ').css('height');

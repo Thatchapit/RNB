@@ -173,6 +173,34 @@ nav {
   background-color: white;
 }
 
+.svg *{
+  fill: black;
+  
+}
+
+.footerIcon.mail:hover{
+  background-color: #00c1b6;
+}
+
+.footerIcon.line:hover{
+  background-color: #05c100;
+}
+
+.footerIcon.facebook:hover{
+  background-color: #3b5998;
+}
+
+.footerIcon.map:hover{
+  background-color: #c10e00;
+}
+
+
+.footerIcon:hover .svg *{
+  fill: white;
+}
+
+
+    
 
 /* CUSTOMIZE THE CAROUSEL
   -------------------------------------------------- */
